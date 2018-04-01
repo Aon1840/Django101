@@ -56,7 +56,7 @@ ROOT_URLCONF = 'MySQL.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['testMySQL/Templates/'],
+        'DIRS': ['testMySQL/Templates/','api/Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -17,8 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 from testMySQL import views
+from api import views as apiViews
 
 urlpatterns = [
     url(r'^test/', views.index),
-    url(r'^send/$', views.sendData)
+    url(r'^send/$', views.sendData),
+    url(r'^show/$', apiViews.home)
 ]

@@ -19,5 +19,6 @@ from django.conf.urls import url
 from testMySQL import views
 
 urlpatterns = [
-    url(r'^test/', views.index)
+    url(r'^test/', views.index),
+    url(r'^send/$', views.sendData)
 ]

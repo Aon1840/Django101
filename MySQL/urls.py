@@ -22,5 +22,6 @@ from api import views as apiViews
 urlpatterns = [
     url(r'^test/', views.index),
     url(r'^send/$', views.sendData),
-    url(r'^show/$', apiViews.home)
+    url(r'^show/$', apiViews.home),
+    url(r'^hello/$', views.testHelloWorld)
 ]

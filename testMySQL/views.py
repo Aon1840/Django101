@@ -24,6 +24,18 @@ def index(request):
     }
     return HttpResponse(json.dumps(context),content_type="application/json")
 
+
+def testHelloWorld(request):
+    testHello = Blog.objects.filter()
+    t1 = testHello[0].name
+    template = loader.get_template('index.html')
+    str = "hello world"
+    context = {
+        't1' : t1
+    }
+    return HttpResponse(template.render(context, request))
+
+
 @csrf_exempt
 def sendData(request):
     if(request.method == "POST"):

@@ -8,8 +8,8 @@ import json
 # Create your views here.
 def index(request):
     b1 = Blog.objects.filter()
-    header_str = "Hello, Python variable"
-    template = loader.get_template('index.html')
+    # header_str = "Hello, Python variable"
+    # template = loader.get_template('index.html')
     bls = []
     for b in b1 :
         bls.append({
@@ -18,7 +18,7 @@ def index(request):
         })
 
     context = {
-        'var1' : header_str,
+        # 'var1' : header_str,
         'std' : bls
 
     }

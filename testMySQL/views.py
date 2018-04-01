@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from testMySQL.models import Blog
+import json
 
 # Create your views here.
 def index(request):
@@ -8,9 +9,18 @@ def index(request):
     std = b1[0]
     header_str = "Hello, Python variable"
     template = loader.get_template('index.html')
+    bls = []
+    for b in b1 :
+        bls.append({
+            "name" : b.name,
+            "tagline" : b.tagline
+        })
+
     context = {
         'var1' : header_str,
-        'std' : std
+        'std' : bls
 
     }
-    return HttpResponse(template.render(context, request))
+    return HttpResponse(json.dumps(context),content_type="application/json")
+# def testJson(request):
+    # b1 = Blog.o

@@ -1,4 +1,6 @@
 from django.db import models
+from django_mysql.models import JSONField
+import json
 
 class Blog(models.Model):
     name = models.CharField(max_length=100)
@@ -13,6 +15,7 @@ class Author(models.Model):
 
     def __str__(self):
         return self.name
+
 
 class Entry(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)

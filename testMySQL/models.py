@@ -5,7 +5,7 @@ class Blog(models.Model):
     tagline = models.TextField()
 
     def __str__(self): #like a toString
-        return self.name
+        return self.name + " " + self.tagline
 
 class Author(models.Model):
     name = models.CharField(max_length=200)
